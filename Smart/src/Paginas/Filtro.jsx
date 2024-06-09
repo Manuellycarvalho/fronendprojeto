@@ -46,6 +46,7 @@ export function Filtro() {
 
     return (
         <div className={estilos.container}>
+            <h2 className={estilos.title3}>Filtro</h2>
             <form onSubmit={handleSubmit} className={estilos.formulario}>
 
                     <label>Responsável</label>

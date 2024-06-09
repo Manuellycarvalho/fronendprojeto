@@ -16,12 +16,12 @@ function Footer() {
     );
 }
 
-export function Projeto() {
+export function Sobre() {
     return (
         <div className={estilos.container}>
             <div className={estilos.banner}></div>
             <div>
-             <h2 className={estilos.title3}>Sobre a SmartyCity</h2>       
+            <h2 className={estilos.title3}>Sobre a SmartyCity</h2>
             </div>
 
             <div className={estilos.bannersContainer}>

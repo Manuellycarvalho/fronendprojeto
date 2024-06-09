@@ -1,11 +1,10 @@
-// src/Paginas/CadastrarSensor.jsx
 import React from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import estilos from './CadastrarSensor.module.css';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import estilos from './CadastrarSensor.module.css';
 
 const schemaSensor = z.object({
     tipo: z.string().nonempty('Tipo é obrigatório'),
@@ -41,46 +40,45 @@ export function CadastrarSensor() {
     }
 
     return (
-        <div className={estilos.conteiner}>
-            <p className={estilos.titulo}>Cadastro de Sensor</p>
-
-            <form className={estilos.formulario} onSubmit={handleSubmit(obterDadosFormulario)}>
-                <select {...register('tipo')} className={estilos.campo}>
+        <div className={estilos.container}>
+            <h2 className={estilos.title3}>Cadastrar Sensor</h2>
+            <form className={estilos.form} onSubmit={handleSubmit(obterDadosFormulario)}>
+                <select {...register('tipo')} className={estilos.input}>
                     <option value="">Selecione o tipo de sensor</option>
                     <option value="Temperatura">Temperatura</option>
                     <option value="Contador">Contador</option>
                     <option value="Luminosidade">Luminosidade</option>
                     <option value="Umidade">Umidade</option>
                 </select>
-                {errors.tipo && <p className={estilos.mensagem}>{errors.tipo.message}</p>}
+                {errors.tipo && <p className={estilos.error}>{errors.tipo.message}</p>}
 
-                <input {...register('mac_address')} className={estilos.campo} placeholder="MAC Address" />
-                {errors.mac_address && <p className={estilos.mensagem}>{errors.mac_address.message}</p>}
+                <input {...register('mac_address')} className={estilos.input} placeholder="MAC Address" />
+                {errors.mac_address && <p className={estilos.error}>{errors.mac_address.message}</p>}
 
-                <input {...register('latitude')} className={estilos.campo} placeholder="Latitude" />
-                {errors.latitude && <p className={estilos.mensagem}>{errors.latitude.message}</p>}
+                <input {...register('latitude')} className={estilos.input} placeholder="Latitude" />
+                {errors.latitude && <p className={estilos.error}>{errors.latitude.message}</p>}
 
-                <input {...register('longitude')} className={estilos.campo} placeholder="Longitude" />
-                {errors.longitude && <p className={estilos.mensagem}>{errors.longitude.message}</p>}
+                <input {...register('longitude')} className={estilos.input} placeholder="Longitude" />
+                {errors.longitude && <p className={estilos.error}>{errors.longitude.message}</p>}
 
-                <input {...register('localizacao')} className={estilos.campo} placeholder="Localização" />
-                {errors.localizacao && <p className={estilos.mensagem}>{errors.localizacao.message}</p>}
+                <input {...register('localizacao')} className={estilos.input} placeholder="Localização" />
+                {errors.localizacao && <p className={estilos.error}>{errors.localizacao.message}</p>}
 
-                <input {...register('responsavel')} className={estilos.campo} placeholder="Responsável" />
-                {errors.responsavel && <p className={estilos.mensagem}>{errors.responsavel.message}</p>}
+                <input {...register('responsavel')} className={estilos.input} placeholder="Responsável" />
+                {errors.responsavel && <p className={estilos.error}>{errors.responsavel.message}</p>}
 
-                <input {...register('unidade_medida')} className={estilos.campo} placeholder="Unidade de Medida" />
-                {errors.unidade_medida && <p className={estilos.mensagem}>{errors.unidade_medida.message}</p>}
+                <input {...register('unidade_medida')} className={estilos.input} placeholder="Unidade de Medida" />
+                {errors.unidade_medida && <p className={estilos.error}>{errors.unidade_medida.message}</p>}
 
-                <label className={estilos.campoCheckbox}>
+                <label className={estilos.checkbox}>
                     Status Operacional:
                     <input {...register('status_operacional')} type="checkbox" />
                 </label>
 
-                <textarea {...register('observacao')} className={estilos.campo} placeholder="Observação"></textarea>
-                {errors.observacao && <p className={estilos.mensagem}>{errors.observacao.message}</p>}
+                <textarea {...register('observacao')} className={estilos.input} placeholder="Observação"></textarea>
+                {errors.observacao && <p className={estilos.error}>{errors.observacao.message}</p>}
 
-                <button className={estilos.botao}>Cadastrar</button>
+                <button className={estilos.button}>Cadastrar</button>
             </form>
         </div>
     );

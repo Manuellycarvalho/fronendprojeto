@@ -29,7 +29,10 @@ export function Cabecalho() {
               {mostrarDropdown && (
                 <ul className={estilos.dropdownMenu}>
                   <li><Link to='/inicial/filtro' className={estilos.navLink}>Filtros</Link></li>
-                  <li><Link to='/inicial' className={estilos.navLink}>Lista Sensores</Link></li>
+                  <li><Link to='/inicial/sensor' className={estilos.navLink}>Lista Sensores</Link></li>
+                  <li><Link to='/inicial/localizacao' className={estilos.navLink}>Mapa</Link></li>
+                  <li><Link to='/inicial/cadsensor' className={estilos.navLink}>Cadastrar Sensor</Link></li>
+
                 </ul>
               )}
             </li>
